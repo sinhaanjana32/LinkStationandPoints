@@ -1,30 +1,18 @@
-import React, {
-    Component
-  } from 'react';
-  import {
-  
-    Bubble
-  } from 'react-chartjs-2';
+import React, {Component} from 'react';
+import {Bubble} from 'react-chartjs-2';
   
   
-  const chartDiv ={
-  
+  const chartDiv = {
     backgroundColor: 'white',
     height: '300px',
     width: '600px',
-  
     overflowX:' hidden',
-  
   }
-  
-  
-  
-  
+
   class Chart extends Component {
     constructor(props) {
       super(props);
       this.state = {chartData: props.chartData}
-  
       console.log(this.state.chartData)
     }
   
@@ -33,21 +21,16 @@ import React, {
     displayLegend: true,
    }
   
-  
-  
     render() {
       return (
-  
-        <div className="container" style={chartDiv}>
-       
-  
-  <Bubble data = {this.state.chartData}
+      <div className="container" style={chartDiv}>
+      <Bubble data = {this.state.chartData}
         options = {
           {
             options: {
               title: {
                 display: this.props.displayTitle,
-                text: 'cities of world',
+                text: 'Stations',
                 fontSize: '100'
               },
               legend: {
@@ -65,18 +48,10 @@ import React, {
             }
           }
         }
-        />
-  
-  
-        </div>
-  
-  
-  
+      />
+      </div>
       );
-  
-    }
-  
+    } 
   }
-  
   export default Chart;
   
